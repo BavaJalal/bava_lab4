@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fish Species Prediction</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f7f7f7; }
+        .container { width: 50%; margin: auto; padding: 20px; background: #fff; border-radius: 8px; margin-top: 50px; }
+        input[type="text"], input[type="number"] { width: 100%; padding: 8px; margin: 8px 0; box-sizing: border-box; }
+        input[type="submit"] { background-color: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer; }
+        input[type="submit"]:hover { background-color: #45a049; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Fish Species Prediction</h2>
+        <form action="/predict" method="post">
+            <label for="Weight">Weight (g):</label>
+            <input type="number" step="any" id="Weight" name="Weight" required>
+            
+            <label for="Length1">Length1 (cm):</label>
+            <input type="number" step="any" id="Length1" name="Length1" required>
+            
+            <label for="Length2">Length2 (cm):</label>
+            <input type="number" step="any" id="Length2" name="Length2" required>
+            
+            <label for="Length3">Length3 (cm):</label>
+            <input type="number" step="any" id="Length3" name="Length3" required>
+            
+            <label for="Height">Height (cm):</label>
+            <input type="number" step="any" id="Height" name="Height" required>
+            
+            <label for="Width">Width (cm):</label>
+            <input type="number" step="any" id="Width" name="Width" required>
+            
+            <input type="submit" value="Predict">
+        </form>
+        <br>
+        {% if prediction_text %}
+            <h3>{{ prediction_text }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
